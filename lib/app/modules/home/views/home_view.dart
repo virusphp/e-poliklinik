@@ -10,38 +10,16 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
+      body: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: () => Get.toNamed(Routes.HOME),
-                  icon: Icon(
-                    Icons.addchart_outlined,
-                  ),
-                  label: Text("Pasien"),
-                ),
-                ElevatedButton.icon(
-                  onPressed: () => Get.toNamed(Routes.HOME),
-                  icon: Icon(Icons.addchart_outlined),
-                  label: Text("Pasien"),
-                ),
-                ElevatedButton.icon(
-                  onPressed: () => Get.toNamed(Routes.HOME),
-                  icon: Icon(Icons.addchart_outlined),
-                  label: Text("Pasien"),
-                ),
-                ElevatedButton.icon(
-                  onPressed: () => Get.toNamed(Routes.HOME),
-                  icon: Icon(Icons.addchart_outlined),
-                  label: Text("Pasien"),
-                ),
-              ],
+          ClipPath(
+            clipper: ClipPathClass(),
+            child: Container(
+              height: 250,
+              width: Get.width,
+              color: Color.fromARGB(255, 13, 210, 224),
             ),
-          ),
+          )
         ],
       ),
       bottomNavigationBar: BottomAppBar(
@@ -61,15 +39,15 @@ class HomeView extends GetView<HomeController> {
                 ),
                 Column(
                   children: <Widget>[
-                    Icon(Icons.search, color: Colors.black45),
-                    Text('Search', style: TextStyle(fontSize: 12.0))
+                    Icon(Icons.history, color: Colors.black45),
+                    Text('Riwayat', style: TextStyle(fontSize: 12.0))
                   ],
                 ),
                 Column(
                   children: <Widget>[
-                    Icon(Icons.shop, color: Colors.black45),
+                    Icon(Icons.assignment_return_sharp, color: Colors.black45),
                     Text(
-                      'Wishlist',
+                      'Antrian',
                       style: TextStyle(fontSize: 12.0),
                     )
                   ],
@@ -77,10 +55,10 @@ class HomeView extends GetView<HomeController> {
                 Column(
                   children: <Widget>[
                     Icon(
-                      Icons.shopping_cart,
+                      Icons.account_circle,
                       color: Colors.black45,
                     ),
-                    Text('Cart', style: TextStyle(fontSize: 12.0))
+                    Text('Profil', style: TextStyle(fontSize: 12.0))
                   ],
                 ),
               ],
@@ -90,4 +68,27 @@ class HomeView extends GetView<HomeController> {
       ),
     );
   }
+}
+
+class ClipPathClass extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.lineTo(0.0, size.height - 60);
+
+    path.quadraticBezierTo(
+      size.width / 2,
+      size.height,
+      size.width,
+      size.height - 60,
+    );
+
+    path.lineTo(size.width, 0);
+    path.close();
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
 }

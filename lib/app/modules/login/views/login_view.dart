@@ -75,7 +75,7 @@ class LoginView extends GetView<LoginController> {
                 onPressed: () => Get.offAllNamed(Routes.HOME),
                 child: Text("Log in"),
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 2, 226, 70),
+                    backgroundColor: Color.fromARGB(255, 13, 210, 224),
                     foregroundColor: Colors.white,
                     padding: EdgeInsets.symmetric(vertical: 20)),
               ),
