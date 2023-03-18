@@ -1,5 +1,6 @@
 import 'package:epasien/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import 'package:get/get.dart';
 
@@ -19,7 +20,70 @@ class HomeView extends GetView<HomeController> {
               width: Get.width,
               color: Color.fromARGB(255, 13, 210, 224),
             ),
-          )
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 20),
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 25),
+                  height: Get.height * 0.4,
+                  // color: Colors.greenAccent,
+                  child: Column(
+                    children: [
+                      ClipPath(
+                        clipper: ClipInfoClass(),
+                        child: Container(
+                          padding: EdgeInsets.all(25),
+                          margin: EdgeInsets.symmetric(horizontal: 25),
+                          height: 200,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                Color.fromARGB(255, 9, 210, 224),
+                                Color.fromARGB(255, 3, 179, 192),
+                              ],
+                            ),
+                          ),
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "11111",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Image.asset(
+                                    "assets/logo/logo-only.png",
+                                    width: 75,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 7,
+                  color: Color(0xFFFFF1F2F6),
+                ),
+                Expanded(
+                  child: Container(
+                    color: Colors.purpleAccent,
+                  ),
+                )
+              ],
+            ),
+          ),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
@@ -68,6 +132,23 @@ class HomeView extends GetView<HomeController> {
       ),
     );
   }
+}
+
+class ClipInfoClass extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.lineTo(-5, size.height);
+    path.lineTo(size.width - 80, size.height - 5);
+    path.lineTo(size.width - 5, size.height - 80);
+    path.lineTo(size.width, -5);
+    path.close();
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
 }
 
 class ClipPathClass extends CustomClipper<Path> {
