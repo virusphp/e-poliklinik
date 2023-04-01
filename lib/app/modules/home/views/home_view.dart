@@ -25,83 +25,194 @@ class HomeView extends GetView<HomeController> {
             margin: EdgeInsets.only(top: 20),
             child: Column(
               children: [
-                Container(
-                  margin: EdgeInsets.only(top: 25),
-                  height: Get.height * 0.4,
-                  // color: Colors.greenAccent,
-                  child: Column(
-                    children: [
-                      ClipPath(
-                        clipper: ClipInfoClass(),
-                        child: Container(
-                          padding: EdgeInsets.all(25),
-                          margin: EdgeInsets.symmetric(horizontal: 25),
-                          height: 200,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                Color.fromARGB(255, 9, 210, 224),
-                                Color.fromARGB(255, 3, 179, 192),
-                              ],
-                            ),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    "No. RM",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Text(
-                                    "111111",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  // Image.asset(
-                                  //   "assets/logo/logo-only.png",
-                                  //   width: 75,
-                                  // ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    "Nama",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Text(
-                                    "Admin Simrs",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                Column(
+                  children: [
+                    ClipPath(
+                      clipper: ClipInfoClass(),
+                      child: Container(
+                        padding: EdgeInsets.all(25),
+                        margin: EdgeInsets.symmetric(horizontal: 25),
+                        height: 200,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.fromARGB(255, 9, 210, 224),
+                              Color.fromARGB(255, 3, 179, 192),
                             ],
                           ),
                         ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "No. RM",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  "111111",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                // Image.asset(
+                                //   "assets/logo/logo-only.png",
+                                //   width: 75,
+                                // ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "No. BPJS",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  "0001125254254",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Nama",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  "Admin Simrs",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Divider(
+                              color: Colors.black,
+                            ),
+                            Text(
+                              "RSUD KRATON KABUPATEN PEKALONGAN",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Card(
+                            child: Container(
+                              padding: EdgeInsets.all(10),
+                              width: Get.width * 0.25,
+                              // height: 70,
+                              // color: Colors.amber,
+                              child: Column(
+                                children: [
+                                  Text(
+                                    "Riwayat RJ",
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Icon(Icons.location_history_rounded)
+                                ],
+                              ),
+                            ),
+                          ),
+                          Card(
+                            child: Container(
+                              padding: EdgeInsets.all(10),
+                              width: Get.width * 0.25,
+                              // height: 70,
+                              // color: Colors.amber,
+                              child: Column(
+                                children: [
+                                  Text(
+                                    "Riwayat RI",
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Icon(Icons.bedroom_parent_rounded)
+                                ],
+                              ),
+                            ),
+                          ),
+                          Card(
+                            child: Container(
+                              padding: EdgeInsets.all(5),
+                              width: Get.width * 0.25,
+                              // height: 70,
+                              // color: Colors.amber,
+                              child: Column(
+                                children: [
+                                  Text(
+                                    "Riwayat Obat",
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Icon(Icons.no_drinks_rounded)
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
                 Container(
                   height: 7,
